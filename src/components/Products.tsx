@@ -35,7 +35,7 @@ const Products = () => {
       if (searchTerm) {
         param = `/search?q=${searchTerm}`;
       } else if (selectedCategory) {
-        param = `/category/${selectedCategory}?${paginatiomParam}`;
+        param = `/category/${selectedCategory}`;
       } else if (data?.limit) {
         param = `/${selectedCategory}?${paginatiomParam}`;
       }
@@ -48,7 +48,7 @@ const Products = () => {
     };
 
     fetchDataAsync();
-  }, [selectedCategory, searchTerm, skip]);
+  }, [selectedCategory, searchTerm, skip, data?.limit]);
 
   const handleCategoryClick = (category: string) => {
     setSearchTerm('');
