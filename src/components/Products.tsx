@@ -40,10 +40,7 @@ const Products = () => {
         param = `/${selectedCategory}?${paginatiomParam}`;
       }
 
-      await fetchData<Products>(
-        `https://dummyjson.com/products${param}`,
-        setdata
-      );
+      await fetchData(`https://dummyjson.com/products${param}`).then(setdata);
       setIsLoading(false);
     };
 
